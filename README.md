@@ -127,4 +127,85 @@ Naming conventions for GoLang Variables:
 • If the name of a variable begins with a capital letter, it can be accessed from packages outside the current package one this is considered as exported variables.
 • Variable names are case-sensitive (car, Car and CAR are three different variables).
 • If you declare a variable without assigning it a value, Golang will automatically bind a default value (or a zero-value) to the variable.
+•	We use the operator : = for declaring and initializing variables with short variable declaration. When you declare variables with this method, you can't specify the type because the type is determined by the initializer expression.
+
+Conversions in Go using strconv and reflect packages: 
+https://www.golangprograms.com/go-language/integer-float-string-boolean.html
+
+GoLang Operators
+
+https://www.golangprograms.com/go-language/operators.html
+
+•	Arithmetic Operators
+•	Assignment Operators
+•	Comparison Operators
+•	Logical Operators
+•	Bitwise Operators
+
+If else : pretty much same like java just no brackets to define if and else if statements. Can initialize variable within if statement.
+https://www.golangprograms.com/golang-if-else-statements.html
+Switch Case: 
+Pretty similar to Java. Can have multiple case line statements. fallthrough key word to continue flow in the following case, conditional case statement, var initialization in switch statement
+https://www.golangprograms.com/golang-switch-case-statements.html
+
+For Loop:
+A for loop is used for iterating over a sequence (that is either a slice, an array, a map, or a string.
+Golang has no while loop because the for loop serves the same purpose when used with a single condition.
+Can be used in different ways as below:
+package main
+ 
+import "fmt"
+ 
+func main() {
+ 
+	k := 1
+	for ; k <= 10; k++ {
+		fmt.Println(k)
+	}
+ 
+	k = 1
+	for k <= 10 {
+		fmt.Println(k)
+		k++
+	}
+ 
+	for k := 1; ; k++ {
+		fmt.Println(k)
+		if k == 10 {
+			break
+		}
+	}
+}
+
+Uses range key word to iterate over an expression that evaluates to an array, slice, map, string, or channel.
+Infinite loop with just using for and to break the loop condition is needed inside the if block. Works as a do while. 
+
+Function
+Simple function: No parameters, no return type
+Function with parameters
+Function with return type
+Named return values * can name the return value and define a variable in function to return and use only return without specifying variable name
+Return multiple value * 
+Note: If the functions with names that start with an uppercase letter will be exported to other packages. If the function name starts with a lowercase letter, it won't be exported to other packages, but you can call this function within the same package.
+
+
+Kafka – GoLang Integration (Clients for Kafka) https://kafka.apache.org/ Navigate to DOCS > CLIENTS which takes you to below link
+https://cwiki.apache.org/confluence/display/KAFKA/Clients#Clients-Go(AKAgolang)
+
+Multiple clients are available for Kafka integration with GoLang. Then one we have chosen is confluent-kafka-go provided by Confluent.
+confluent-kafka-go: Confluent's Kafka client for Golang wraps the librdkafka C library, providing full Kafka protocol support with great performance and reliability.
+The Golang bindings provides a high-level Producer and Consumer with support for the balanced consumer groups of Apache Kafka 0.9 and above.
+Kafka Version: 0.8.x, 0.9.x,  0.10.x, 0.11.x
+Maintainer: Confluent
+License: Apache v2.0
+https://github.com/confluentinc/confluent-kafka-go
+Docs: http://docs.confluent.io/current/clients/index.html
+
+
+GoLang system packages:
+fmt - Println
+strconv – string conversion (Atoi, ParseInt, ParseFloat, ParseBool, FormatInt, FormatFloat)
+reflect - TypeOf
+time – Now eg: today := time.Now() 
+var day int = today.Day()
 
